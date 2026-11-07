@@ -177,6 +177,71 @@
     </div>
   </section>
 
+  <!-- ═════════ OÙ AVEZ-VOUS MAL ? (carte du corps interactive) ═════════ -->
+  <section class="section douleur" id="ou-avez-vous-mal" aria-labelledby="douleur-title">
+    <div class="douleur__glow" aria-hidden="true"></div>
+    <div class="section__inner">
+      <div class="section-head section-head--center reveal">
+        <p class="label label--rose"><span class="label__dot"></span>Orientation express</p>
+        <h2 id="douleur-title">Où avez-vous <em>mal&nbsp;?</em></h2>
+        <p class="douleur__lead">Touchez la zone qui vous gêne : nous vous indiquons la prise en charge adaptée.</p>
+      </div>
+
+      <div class="douleur__grid reveal">
+        <div class="douleur__body">
+          <svg class="body-map" viewBox="0 0 200 440" role="group" aria-label="Silhouette : choisissez une zone du corps">
+            <g class="body-map__shape" aria-hidden="true">
+              <circle cx="100" cy="40" r="24"/>
+              <rect x="91" y="60" width="18" height="20" rx="8"/>
+              <path d="M62 86 Q100 74 138 86 Q148 120 142 160 Q138 196 134 226 L66 226 Q62 196 58 160 Q52 120 62 86 Z"/>
+              <path class="body-map__limb" d="M64 92 L48 152 L40 228"/>
+              <path class="body-map__limb" d="M136 92 L152 152 L160 228"/>
+              <path class="body-map__limb body-map__limb--leg" d="M84 222 L80 322 L82 418"/>
+              <path class="body-map__limb body-map__limb--leg" d="M116 222 L120 322 L118 418"/>
+            </g>
+            <path class="body-map__spine" d="M100 84 C94 120 106 160 100 220" aria-hidden="true"/>
+            <g class="body-map__spots">
+              <g class="spot" data-zone="tete" tabindex="0" role="button" aria-label="Tête et équilibre"><circle class="spot__hit" cx="100" cy="36" r="14"/><circle class="spot__dot" cx="100" cy="36" r="6"/></g>
+              <g class="spot" data-zone="nuque" tabindex="0" role="button" aria-label="Nuque et cou"><circle class="spot__hit" cx="100" cy="72" r="11"/><circle class="spot__dot" cx="100" cy="72" r="5.5"/></g>
+              <g class="spot" data-zone="epaule" tabindex="0" role="button" aria-label="Épaule"><circle class="spot__hit" cx="64" cy="92" r="12"/><circle class="spot__dot" cx="64" cy="92" r="6"/></g>
+              <g class="spot" data-zone="epaule" tabindex="-1" aria-hidden="true"><circle class="spot__hit" cx="136" cy="92" r="12"/><circle class="spot__dot" cx="136" cy="92" r="6"/></g>
+              <g class="spot" data-zone="colonne" tabindex="0" role="button" aria-label="Colonne vertébrale et posture"><circle class="spot__hit" cx="100" cy="132" r="13"/><circle class="spot__dot" cx="100" cy="132" r="6.5"/></g>
+              <g class="spot" data-zone="coude" tabindex="0" role="button" aria-label="Coude, poignet et main"><circle class="spot__hit" cx="47" cy="160" r="12"/><circle class="spot__dot" cx="47" cy="160" r="5.5"/></g>
+              <g class="spot" data-zone="coude" tabindex="-1" aria-hidden="true"><circle class="spot__hit" cx="153" cy="160" r="12"/><circle class="spot__dot" cx="153" cy="160" r="5.5"/></g>
+              <g class="spot" data-zone="lombaires" tabindex="0" role="button" aria-label="Bas du dos"><circle class="spot__hit" cx="100" cy="186" r="13"/><circle class="spot__dot" cx="100" cy="186" r="6.5"/></g>
+              <g class="spot" data-zone="hanche" tabindex="0" role="button" aria-label="Hanche"><circle class="spot__hit" cx="70" cy="216" r="11"/><circle class="spot__dot" cx="70" cy="216" r="5.5"/></g>
+              <g class="spot" data-zone="hanche" tabindex="-1" aria-hidden="true"><circle class="spot__hit" cx="130" cy="216" r="11"/><circle class="spot__dot" cx="130" cy="216" r="5.5"/></g>
+              <g class="spot" data-zone="bassin" tabindex="0" role="button" aria-label="Bassin et périnée"><circle class="spot__hit" cx="100" cy="226" r="11"/><circle class="spot__dot" cx="100" cy="226" r="5.5"/></g>
+              <g class="spot" data-zone="genou" tabindex="0" role="button" aria-label="Genou"><circle class="spot__hit" cx="80" cy="322" r="13"/><circle class="spot__dot" cx="80" cy="322" r="6"/></g>
+              <g class="spot" data-zone="genou" tabindex="-1" aria-hidden="true"><circle class="spot__hit" cx="120" cy="322" r="13"/><circle class="spot__dot" cx="120" cy="322" r="6"/></g>
+              <g class="spot" data-zone="cheville" tabindex="0" role="button" aria-label="Cheville et pied"><circle class="spot__hit" cx="82" cy="406" r="12"/><circle class="spot__dot" cx="82" cy="406" r="5.5"/></g>
+              <g class="spot" data-zone="cheville" tabindex="-1" aria-hidden="true"><circle class="spot__hit" cx="118" cy="406" r="12"/><circle class="spot__dot" cx="118" cy="406" r="5.5"/></g>
+            </g>
+          </svg>
+          <p class="douleur__hint" aria-hidden="true"><span></span>Touchez un point</p>
+        </div>
+
+        <div class="douleur__side">
+          <div class="douleur__panel" data-douleur-panel aria-live="polite">
+            <div class="douleur__empty">
+              <p class="douleur__kicker">Votre orientation</p>
+              <p class="douleur__title">Choisissez une zone sur la silhouette.</p>
+              <p class="douleur__text">Ou sélectionnez une situation ci-dessous.</p>
+            </div>
+          </div>
+          <div class="douleur__chips" role="group" aria-label="Situations particulières">
+            <button type="button" class="douleur__chip" data-zone="enfant">Mon enfant</button>
+            <button type="button" class="douleur__chip" data-zone="accouchement">Après un accouchement</button>
+            <button type="button" class="douleur__chip" data-zone="muscles">Douleurs musculaires</button>
+            <button type="button" class="douleur__chip" data-zone="domicile">Je ne peux pas me déplacer</button>
+          </div>
+          <a class="cta cta--rose cta--lg douleur__cta" href="#prendre-rendez-vous" data-motif="Autre demande" data-douleur-cta>Prendre rendez-vous <span class="cta__arrow" aria-hidden="true">↗</span></a>
+          <p class="douleur__note">Cet outil vous oriente ; il ne remplace pas un avis médical. Le bilan au cabinet confirme la prise en charge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═════════ 02 PRISE EN CHARGE (colonne vertébrale) ═════════ -->
   <section class="section parcours" id="prise-en-charge">
     <div class="section__inner">
@@ -466,5 +531,6 @@
 
 <script src="layout.js"></script>
 <script src="script.js"></script>
+<script src="bodymap.js"></script>
 </body>
 </html>

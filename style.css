@@ -1296,3 +1296,116 @@ p { text-wrap: pretty; }
   .js .reveal { opacity: 1; transform: none; }
   .scribble path, .hero__spine-line { stroke-dashoffset: 0; }
 }
+
+/* ═════════ OÙ AVEZ-VOUS MAL ? ═════════ */
+.douleur {
+  position: relative; overflow: hidden; isolation: isolate;
+  margin: 0 clamp(0.5rem, 2vw, 1.5rem) clamp(2.5rem, 6vw, 4rem);
+  border-radius: clamp(28px, 6vw, 72px);
+  background: radial-gradient(120% 90% at 15% 0%, #2c5045 0%, var(--forest-night) 55%, #172c26 100%);
+  color: var(--ivory);
+}
+.douleur::before { content: ""; position: absolute; inset: 0; background-image: var(--grain); opacity: .08; mix-blend-mode: overlay; z-index: -1; }
+.douleur__glow {
+  position: absolute; z-index: -1; width: 46rem; height: 46rem; inset-inline-end: -16rem; top: -18rem; border-radius: 50%;
+  background: radial-gradient(circle, rgba(197, 143, 134, .32), transparent 62%);
+  animation: douleurGlow 9s ease-in-out infinite alternate;
+}
+@keyframes douleurGlow { to { transform: translate(-6rem, 8rem) scale(1.1); } }
+.douleur h2 { color: var(--ivory); }
+.douleur h2 em { color: var(--rose); }
+.douleur .label--rose { color: var(--rose); }
+.douleur__lead { margin: 1rem auto 0; max-width: 34rem; color: rgba(244, 239, 231, .75); font-size: 1.1rem; }
+
+.douleur__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 5vw, 4.5rem); align-items: center; }
+
+/* silhouette */
+.douleur__body { position: relative; display: grid; place-items: center; }
+.douleur__body::before {
+  content: ""; position: absolute; width: min(100%, 380px); aspect-ratio: 1; border-radius: 50%;
+  border: 1px dashed var(--line-light); animation: spinSlow 60s linear infinite;
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+.body-map { position: relative; width: min(100%, 300px); height: auto; overflow: visible; }
+.body-map__shape > * { fill: rgba(145, 169, 154, .2); stroke: rgba(227, 234, 229, .35); stroke-width: 1.2; }
+.body-map__shape .body-map__limb { fill: none; stroke: rgba(145, 169, 154, .2); stroke-width: 18; stroke-linecap: round; stroke-linejoin: round; }
+.body-map__shape .body-map__limb--leg { stroke-width: 24; }
+.body-map__spine { fill: none; stroke: var(--sage); stroke-width: 2; stroke-dasharray: 3 7; stroke-linecap: round; opacity: .7; animation: spineFlow 3s linear infinite; }
+@keyframes spineFlow { to { stroke-dashoffset: -20; } }
+
+.spot { cursor: pointer; outline: none; }
+.spot__hit { fill: transparent; }
+.spot__dot { fill: var(--rose); stroke: var(--ivory); stroke-width: 2; transform-box: fill-box; transform-origin: center; transition: transform .35s var(--ease), fill .3s; }
+.spot::after { content: none; }
+.spot .spot__hit { stroke: var(--rose); stroke-width: 1.5; stroke-opacity: 0; transform-box: fill-box; transform-origin: center; animation: spotPulse 2.6s var(--ease) infinite; }
+.spot:nth-child(3n+2) .spot__hit { animation-delay: .8s; }
+.spot:nth-child(3n) .spot__hit { animation-delay: 1.6s; }
+@keyframes spotPulse { 0% { stroke-opacity: .9; transform: scale(.5); } 100% { stroke-opacity: 0; transform: scale(1.5); } }
+.spot:hover .spot__dot, .spot:focus-visible .spot__dot { transform: scale(1.35); }
+.spot:focus-visible .spot__hit { stroke-opacity: 1; animation: none; stroke: var(--ivory); }
+.spot.is-active .spot__dot { fill: var(--ivory); stroke: var(--rose); stroke-width: 3; transform: scale(1.45); }
+.spot.is-active .spot__hit { fill: rgba(197, 143, 134, .35); }
+
+.douleur__hint { position: absolute; bottom: 0; display: inline-flex; align-items: center; gap: .5rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(244, 239, 231, .55); }
+.douleur__hint span { width: 8px; height: 8px; border-radius: 50%; background: var(--rose); animation: pulse 2.4s ease-in-out infinite; }
+
+/* panneau (verre dépoli) */
+.douleur__side { display: grid; gap: 1.1rem; }
+.douleur__panel {
+  min-height: 19rem; padding: clamp(1.4rem, 3vw, 2.2rem); border-radius: 28px;
+  background: linear-gradient(150deg, rgba(244, 239, 231, .1), rgba(244, 239, 231, .03));
+  border: 1px solid var(--line-light);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+.douleur__empty { display: grid; align-content: center; min-height: 15rem; }
+.douleur__result { animation: douleurIn .55s var(--ease) both; }
+@keyframes douleurIn { from { opacity: 0; transform: translateY(14px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+.douleur__kicker { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--rose); margin: 0; }
+.douleur__kicker--gap { margin-top: 1.4rem; }
+.douleur__title { font-family: var(--display); font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.08; letter-spacing: -.02em; margin: .4rem 0 .7rem; color: var(--ivory); }
+.douleur__text { margin: 0; color: rgba(244, 239, 231, .78); line-height: 1.65; }
+.douleur__tags { list-style: none; display: flex; flex-wrap: wrap; gap: .45rem; padding: 0; margin: 1rem 0 0; }
+.douleur__tags li { padding: .3rem .75rem; border-radius: 99px; font-size: .85rem; background: rgba(145, 169, 154, .18); color: var(--sage-soft); border: 1px solid rgba(145, 169, 154, .3); }
+.douleur__soins { list-style: none; padding: 0; margin: .7rem 0 0; display: grid; gap: .5rem; }
+.douleur__soins li { animation: douleurIn .5s var(--ease) both; animation-delay: calc(.15s + var(--i) * .1s); }
+.douleur__soins a {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .85rem 1.1rem; border-radius: 16px;
+  background: var(--ivory); color: var(--forest-night); text-decoration: none; font-weight: 600;
+  transition: transform .3s var(--ease), background .3s;
+}
+.douleur__soins a:hover { transform: translateX(6px); background: var(--rose-soft); }
+
+.douleur__chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.douleur__chip {
+  font: inherit; font-size: .95rem; cursor: pointer; padding: .55rem 1rem; border-radius: 99px;
+  background: transparent; color: var(--ivory); border: 1px solid var(--line-light); transition: background .25s, border-color .25s, color .25s;
+}
+.douleur__chip:hover { border-color: var(--rose); }
+.douleur__chip.is-active { background: var(--rose); border-color: var(--rose); color: var(--forest-night); }
+.douleur__cta { justify-self: start; }
+.douleur__cta.is-ready { animation: ctaNudge .6s var(--ease); }
+@keyframes ctaNudge { 40% { transform: scale(1.05); } }
+.douleur__note { margin: 0; font-size: .82rem; color: rgba(244, 239, 231, .5); }
+
+@media (max-width: 899px) {
+  .douleur__grid { grid-template-columns: 1fr; }
+  .body-map { width: min(70vw, 250px); }
+  .douleur__body { padding-bottom: 1.8rem; }
+  .douleur__panel { min-height: 0; }
+  .douleur__empty { min-height: 8rem; }
+  .douleur__cta { justify-self: stretch; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .douleur__glow, .douleur__body::before, .body-map__spine, .spot .spot__hit { animation: none; }
+}
+
+/* ═════════ Transitions fluides entre les pages (2026 : View Transitions) ═════════ */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: vtOut .35s var(--ease) both; }
+::view-transition-new(root) { animation: vtIn .5s var(--ease) both; }
+@keyframes vtOut { to { opacity: 0; transform: translateY(-12px); filter: blur(4px); } }
+@keyframes vtIn { from { opacity: 0; transform: translateY(18px); filter: blur(4px); } }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}

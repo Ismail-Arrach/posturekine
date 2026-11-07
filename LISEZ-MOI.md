@@ -100,3 +100,13 @@ Le formulaire « Demande de rendez-vous » utilise **Netlify Forms**. Il ne fonc
 5. Faites un test : remplissez le formulaire sur le site en ligne. Le mail arrive dans Gmail. Vérifiez aussi le dossier **Spam** la première fois et marquez-le « Non spam ».
 
 Toutes les demandes restent aussi consultables dans **Netlify → Forms**. L'offre gratuite limite le nombre de demandes par mois, ce qui est largement suffisant pour un cabinet.
+
+## « Où avez-vous mal ? » et transitions (7 novembre 2026)
+
+- **Carte du corps interactive** (section après « Soins et rééducation ») : le visiteur touche une zone de la silhouette (dos, genou, épaule…) ou une situation (« Mon enfant », « Après un accouchement »…). Le site affiche la prise en charge conseillée, avec les liens vers les pages de soin. Le bouton « Prendre rendez-vous » pré-remplit le motif du formulaire.
+  - Les textes et les soins de chaque zone se modifient dans **`bodymap.js`** (liste `ZONES`).
+- **Transitions fluides entre les pages** (View Transitions) : passer de l'accueil à une page de soin se fait en fondu. Cela fonctionne sur Chrome, Edge et Safari récents ; les autres navigateurs changent de page normalement.
+
+## Mettre à jour le site en ligne
+
+Le site est relié à GitHub et à Netlify (posturekine.com). Après chaque modification : ouvrez **GitHub Desktop**, écrivez un résumé, cliquez sur **Commit to main** puis sur **Push origin**. Netlify publie la nouvelle version en une minute environ.
