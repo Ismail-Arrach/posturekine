@@ -4,7 +4,10 @@ const CABINET = {
   phoneDisplay: '06 00 00 00 00',  // numéro tel qu'il s'affiche
   email: 'contact@posturekine.ma',
   city: 'Marrakech (Guéliz)',
-  address: 'Adresse du cabinet, Guéliz, Marrakech',
+  address: 'Centre d’affaires Farid, Magasin 5, Rue Khalid Ben El Walid, Guéliz, Marrakech 40000',
+  // Carte : lieu exact sur Google Maps (recherche pour la carte, lien direct pour l'itinéraire)
+  mapsSearch: 'Pilates House By GIGI, Centre d’affaire Farid, Rue Khalid Ben El Walid, Marrakech',
+  mapsLink: 'https://maps.google.com/?cid=3456781243184087213',
   hours: ['Lun–Ven : 09h–19h', 'Samedi : 09h–13h', 'Dimanche : fermé'],
   socials: {
     instagram: 'https://www.instagram.com/',
@@ -15,7 +18,7 @@ const CABINET = {
 // ==========================================================
 
 const waBase = `https://wa.me/${CABINET.phone.replace('+', '')}`
-const mapsQuery = encodeURIComponent(`Posture Kiné, ${CABINET.address}`)
+const mapsQuery = encodeURIComponent(CABINET.mapsSearch || `Posture Kiné, ${CABINET.address}`)
 
 document.querySelectorAll('[data-phone]').forEach(a => { a.href = `tel:${CABINET.phone}` })
 document.querySelectorAll('[data-phone-text]').forEach(el => { el.textContent = CABINET.phoneDisplay })
@@ -27,7 +30,7 @@ document.querySelectorAll('[data-address]').forEach(el => { el.textContent = CAB
 document.querySelectorAll('[data-hours]').forEach(ul => {
   ul.innerHTML = CABINET.hours.map(h => `<li>${h}</li>`).join('')
 })
-document.querySelectorAll('[data-maps]').forEach(a => { a.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}` })
+document.querySelectorAll('[data-maps]').forEach(a => { a.href = CABINET.mapsLink || `https://www.google.com/maps/search/?api=1&query=${mapsQuery}` })
 document.querySelectorAll('[data-map-frame]').forEach(f => { f.src = `https://maps.google.com/maps?q=${mapsQuery}&output=embed` })
 document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear() })
 
