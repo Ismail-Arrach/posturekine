@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#e4ebe6"/>
+  <circle cx="600" cy="450" r="330" fill="#faf8f4"/>
+  <!-- axe idéal -->
+  <path d="M600 120 V780" stroke="#91a99a" stroke-width="4" stroke-dasharray="10 14"/>
+  <!-- colonne scoliotique -->
+  <path d="M600 140 C690 230 700 330 610 420 C520 510 520 610 600 700 C620 725 615 760 600 780" fill="none" stroke="#355b50" stroke-width="16" stroke-linecap="round"/>
+  <g fill="#355b50">
+    <rect x="618" y="178" width="70" height="26" rx="13" transform="rotate(28 653 191)"/>
+    <rect x="642" y="250" width="74" height="28" rx="14" transform="rotate(12 679 264)"/>
+    <rect x="628" y="322" width="74" height="28" rx="14" transform="rotate(-18 665 336)"/>
+    <rect x="566" y="404" width="74" height="28" rx="14" transform="rotate(-34 603 418)"/>
+    <rect x="512" y="486" width="74" height="28" rx="14" transform="rotate(-14 549 500)"/>
+    <rect x="508" y="566" width="74" height="28" rx="14" transform="rotate(14 545 580)"/>
+    <rect x="546" y="646" width="70" height="26" rx="13" transform="rotate(30 581 659)"/>
+  </g>
+  <!-- flèches de correction -->
+  <g fill="none" stroke="#c58f86" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M820 270 H740"/><path d="M765 245 L740 270 L765 295"/>
+    <path d="M380 540 H460"/><path d="M435 515 L460 540 L435 565"/>
+  </g>
+</svg>

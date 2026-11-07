@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f4efe7"/>
+  <!-- pièce isométrique -->
+  <path d="M600 160 L960 340 L960 640 L600 820 L240 640 L240 340 Z" fill="#faf8f4"/>
+  <path d="M240 340 L600 520 L600 820 L240 640 Z" fill="#e4ebe6"/>
+  <path d="M960 340 L600 520 L600 820 L960 640 Z" fill="#f3e4df"/>
+  <path d="M600 160 L960 340 L600 520 L240 340 Z" fill="#faf8f4" stroke="#355b50" stroke-opacity=".2" stroke-width="3"/>
+  <!-- table de soin -->
+  <path d="M470 420 L640 505 L740 455 L570 370 Z" fill="#355b50"/>
+  <path d="M470 420 L470 445 L640 530 L640 505 Z" fill="#294a40"/>
+  <path d="M640 505 L640 530 L740 480 L740 455 Z" fill="#1f3a32"/>
+  <!-- plante -->
+  <circle cx="830" cy="430" r="34" fill="#91a99a"/><rect x="818" y="460" width="24" height="40" rx="6" fill="#c58f86"/>
+  <!-- ballon -->
+  <circle cx="380" cy="480" r="42" fill="#c58f86"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#faf8f4"/>
+  <circle cx="600" cy="450" r="320" fill="#f3e4df"/>
+  <!-- grand pied (adulte) -->
+  <g fill="#355b50">
+    <ellipse cx="480" cy="520" rx="70" ry="125" transform="rotate(-8 480 520)"/>
+    <circle cx="455" cy="360" r="24"/><circle cx="500" cy="352" r="19"/><circle cx="535" cy="366" r="16"/><circle cx="560" cy="388" r="13"/><circle cx="575" cy="414" r="11"/>
+  </g>
+  <!-- petit pied (enfant) -->
+  <g fill="#c58f86">
+    <ellipse cx="715" cy="430" rx="44" ry="80" transform="rotate(10 715 430)"/>
+    <circle cx="735" cy="328" r="15"/><circle cx="707" cy="324" r="12"/><circle cx="685" cy="333" r="10"/><circle cx="668" cy="348" r="8"/><circle cx="658" cy="365" r="7"/>
+  </g>
+  <!-- pas -->
+  <g fill="#91a99a" fill-opacity=".7">
+    <circle cx="760" cy="600" r="14"/><circle cx="800" cy="660" r="10"/><circle cx="835" cy="715" r="7"/>
+  </g>
+</svg>

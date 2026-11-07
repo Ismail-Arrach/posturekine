@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f4efe7"/>
+  <circle cx="600" cy="450" r="320" fill="#e4ebe6"/>
+  <!-- épaule et bras -->
+  <path d="M430 300 C500 250 600 250 660 300 C700 335 710 380 700 420 L640 640 C630 680 580 690 560 650 L500 470 C470 420 420 380 430 300 Z" fill="#355b50"/>
+  <!-- fibres musculaires -->
+  <g fill="none" stroke="#91a99a" stroke-width="5" stroke-linecap="round" stroke-opacity=".9">
+    <path d="M500 310 C560 360 600 430 600 520"/>
+    <path d="M550 300 C610 350 640 420 630 520"/>
+    <path d="M460 330 C520 380 560 450 570 540"/>
+  </g>
+  <!-- zones douloureuses -->
+  <g fill="#c58f86">
+    <circle cx="640" cy="320" r="26"/><circle cx="600" cy="560" r="20"/>
+  </g>
+  <g fill="none" stroke="#c58f86" stroke-width="5">
+    <circle cx="640" cy="320" r="48" stroke-opacity=".5"/><circle cx="640" cy="320" r="72" stroke-opacity=".25"/>
+    <circle cx="600" cy="560" r="40" stroke-opacity=".5"/>
+  </g>
+</svg>

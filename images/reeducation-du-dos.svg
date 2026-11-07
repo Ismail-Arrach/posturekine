@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f3e4df"/>
+  <circle cx="600" cy="450" r="330" fill="#faf8f4"/>
+  <!-- silhouette de dos -->
+  <path d="M600 150 C560 150 545 185 548 215 C510 230 440 245 420 290 C405 330 420 420 445 480 C465 530 470 600 470 680 L470 780 L730 780 L730 680 C730 600 735 530 755 480 C780 420 795 330 780 290 C760 245 690 230 652 215 C655 185 640 150 600 150 Z" fill="#e4ebe6" stroke="#355b50" stroke-width="8" stroke-linejoin="round"/>
+  <!-- colonne -->
+  <g fill="#355b50">
+    <circle cx="600" cy="250" r="9"/><circle cx="600" cy="285" r="11"/><circle cx="600" cy="322" r="12"/><circle cx="600" cy="360" r="13"/><circle cx="600" cy="400" r="14"/>
+    <circle cx="600" cy="442" r="15"/><circle cx="600" cy="486" r="16"/><circle cx="600" cy="532" r="17"/><circle cx="600" cy="580" r="17"/><circle cx="600" cy="628" r="16"/>
+  </g>
+  <!-- zone lombaire -->
+  <g fill="none" stroke="#c58f86" stroke-width="6">
+    <circle cx="600" cy="580" r="52" stroke-opacity=".7"/><circle cx="600" cy="580" r="82" stroke-opacity=".35"/>
+  </g>
+  <!-- omoplates -->
+  <g fill="none" stroke="#91a99a" stroke-width="7" stroke-linecap="round">
+    <path d="M500 300 C480 340 490 390 530 410"/><path d="M700 300 C720 340 710 390 670 410"/>
+  </g>
+</svg>

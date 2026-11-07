@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#e4ebe6"/>
+  <circle cx="930" cy="180" r="260" fill="#91a99a" fill-opacity=".35"/>
+  <circle cx="230" cy="760" r="200" fill="#c58f86" fill-opacity=".22"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- figure en mouvement -->
+    <circle cx="610" cy="210" r="58" fill="#355b50" stroke="none"/>
+    <path d="M600 290 C590 380 585 450 600 520" stroke="#355b50" stroke-width="44"/>
+    <path d="M598 330 C520 360 460 330 420 280" stroke="#355b50" stroke-width="34"/>
+    <path d="M605 330 C690 330 750 290 800 230" stroke="#355b50" stroke-width="34"/>
+    <path d="M600 520 C560 600 520 660 470 740" stroke="#355b50" stroke-width="38"/>
+    <path d="M605 520 C680 580 720 650 790 700" stroke="#355b50" stroke-width="38"/>
+    <!-- arcs de mouvement -->
+    <path d="M360 230 C330 300 340 380 380 430" stroke="#c58f86" stroke-width="10" stroke-dasharray="2 26"/>
+    <path d="M860 190 C910 250 920 330 890 400" stroke="#c58f86" stroke-width="10" stroke-dasharray="2 26"/>
+  </g>
+  <path d="M250 800 H950" stroke="#355b50" stroke-opacity=".25" stroke-width="4"/>
+</svg>

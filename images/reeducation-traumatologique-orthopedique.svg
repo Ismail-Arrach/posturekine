@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#e4ebe6"/>
+  <circle cx="600" cy="450" r="330" fill="#faf8f4"/>
+  <g fill="none" stroke="#c58f86" stroke-width="5" stroke-opacity=".35"><circle cx="600" cy="450" r="380"/><circle cx="600" cy="450" r="420"/></g>
+  <!-- fémur -->
+  <path d="M560 120 L560 360 C520 370 505 410 530 440 C555 470 600 455 600 455 C600 455 645 470 670 440 C695 410 680 370 640 360 L640 120 Z" fill="#355b50"/>
+  <!-- tibia -->
+  <path d="M545 500 C525 520 535 555 565 560 L565 790 L635 790 L635 560 C665 555 675 520 655 500 C625 485 575 485 545 500 Z" fill="#91a99a"/>
+  <!-- articulation -->
+  <ellipse cx="600" cy="478" rx="58" ry="12" fill="#c58f86"/>
+  <!-- arcs de mouvement -->
+  <path d="M760 340 C830 410 830 520 770 590" fill="none" stroke="#c58f86" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 26"/>
+  <path d="M760 590 L770 590 L775 570" fill="none" stroke="#c58f86" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M440 340 C370 410 370 520 430 590" fill="none" stroke="#91a99a" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 26"/>
+</svg>

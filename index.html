@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#294a40" />
+  <title>Posture Kiné — Votre allié en kinésithérapie à Marrakech</title>
+  <meta name="description" content="Posture Kiné, cabinet de kinésithérapie à Marrakech (Guéliz) : rééducation traumatologique, neurologique, fonctionnelle, pédiatrique, scoliose (Schroth & SEAS), dos, périnéale et à domicile. Yasmine Brini, kinésithérapeute." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Lora:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/logo-emblem.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Intro avec le logo : une seule fois par visite, jamais si l'utilisateur limite les animations
+    (function () {
+      var root = document.documentElement
+      var seen = false
+      try { seen = sessionStorage.getItem('pk-intro') === '1'; sessionStorage.setItem('pk-intro', '1') } catch (e) {}
+      if (seen || matchMedia('(prefers-reduced-motion: reduce)').matches) { root.classList.add('no-intro'); return }
+      root.classList.add('is-intro')
+      setTimeout(function () { root.classList.remove('is-intro') }, 1700)
+    })()
+  </script>
+</head>
+<body>
+
+<div class="intro" aria-hidden="true">
+  <div class="intro__emblem">
+    <svg class="intro__arcs" viewBox="0 0 200 200">
+      <path class="intro__arc intro__arc--sage" d="M92 12 A88 88 0 0 0 88 188"/>
+      <path class="intro__arc intro__arc--rose" d="M108 12 A88 88 0 0 1 112 188"/>
+    </svg>
+    <img src="images/logo-emblem.png" alt="" />
+  </div>
+  <p class="intro__name">Posture <em>Kiné</em></p>
+  <p class="intro__tag">Posture · Équilibre · Énergie</p>
+</div>
+
+<div data-site-header></div>
+
+<main id="main">
+
+  <!-- ═════════ HERO ═════════ -->
+  <section class="hero" id="accueil" aria-label="Accueil">
+    <div class="hero__grain" aria-hidden="true"></div>
+    <div class="hero__rings" aria-hidden="true"></div>
+
+    <div class="hero__shell">
+      <div class="hero__content">
+        <p class="label label--rose"><span class="label__dot"></span>Posture Kiné · <span data-city>Marrakech (Guéliz)</span></p>
+        <h1 class="hero__title">
+          <span class="line"><span>Retrouvez</span></span>
+          <span class="line"><span>votre <em>équilibre<svg class="scribble" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16 C60 4 120 22 180 10 S270 6 296 14"/></svg></em></span></span>
+          <span class="line"><span>à votre rythme.</span></span>
+        </h1>
+        <p class="hero__lead">Kinésithérapie, kinésithérapie posturale et de la scoliose, drainage lymphatique, rééducation périnéale — un accompagnement qui commence toujours par l’écoute.</p>
+        <div class="hero__cta">
+          <a class="cta cta--rose cta--lg" href="#prendre-rendez-vous">Prendre rendez-vous <span class="cta__arrow" aria-hidden="true">↗</span></a>
+          <a class="cta cta--line-light cta--lg" href="#" data-whatsapp target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__arch">
+          <div class="media media--arch" data-label="Photo de Yasmine Brini">
+            <img src="images/yasmine-brini.jpg" alt="Yasmine Brini, kinésithérapeute" width="900" height="1125" fetchpriority="high" />
+          </div>
+        </div>
+
+        <!-- badge circulaire qui tourne -->
+        <div class="spin-badge" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="circle-path" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
+            <text><textPath href="#circle-path">POSTURE • ÉQUILIBRE • ÉNERGIE • MOUVEMENT • </textPath></text>
+          </svg>
+          <span class="spin-badge__center"><img src="images/logo-emblem.png" alt="" width="64" height="64" /></span>
+        </div>
+
+        <!-- colonne animée -->
+        <svg class="hero__spine" viewBox="0 0 120 420" aria-hidden="true">
+          <path class="hero__spine-line" d="M70 10 C20 60 10 130 40 190 C70 250 85 300 70 360 C62 390 50 405 40 412"/>
+          <g class="hero__spine-dots">
+            <circle cx="84" cy="50" r="4"/><circle cx="74" cy="84" r="6"/><circle cx="66" cy="122" r="8"/><circle cx="72" cy="164" r="10"/>
+            <circle cx="88" cy="208" r="11"/><circle cx="102" cy="254" r="11"/><circle cx="106" cy="300" r="10"/><circle cx="98" cy="342" r="8"/>
+            <circle cx="84" cy="376" r="6"/><circle cx="70" cy="402" r="4"/>
+          </g>
+        </svg>
+
+        <div class="hero__note">
+          <span class="hero__note-kicker">Votre kinésithérapeute</span>
+          <span class="hero__note-text">Yasmine <em>Brini</em></span>
+        </div>
+      </div>
+    </div>
+
+    <a class="hero__scroll" href="#soins" aria-label="Découvrir les soins"><span></span></a>
+  </section>
+
+  <!-- ═════════ RUBANS CROISÉS ═════════ -->
+  <div class="ribbons" aria-hidden="true">
+    <div class="ribbon ribbon--rose">
+      <div class="ribbon__track">
+        <span>Rééducation</span><b>✦</b><span>Scoliose</span><b>✦</b><span>Dos</span><b>✦</b><span>Neurologie</span><b>✦</b><span>Pédiatrie</span><b>✦</b><span>Périnéale</span><b>✦</b><span>À domicile</span><b>✦</b>
+        <span>Rééducation</span><b>✦</b><span>Scoliose</span><b>✦</b><span>Dos</span><b>✦</b><span>Neurologie</span><b>✦</b><span>Pédiatrie</span><b>✦</b><span>Périnéale</span><b>✦</b><span>À domicile</span><b>✦</b>
+      </div>
+    </div>
+    <div class="ribbon ribbon--outline">
+      <div class="ribbon__track ribbon__track--reverse">
+        <span>Posture</span><b>●</b><span>Équilibre</span><b>●</b><span>Énergie</span><b>●</b><span>Posture</span><b>●</b><span>Équilibre</span><b>●</b><span>Énergie</span><b>●</b>
+        <span>Posture</span><b>●</b><span>Équilibre</span><b>●</b><span>Énergie</span><b>●</b><span>Posture</span><b>●</b><span>Équilibre</span><b>●</b><span>Énergie</span><b>●</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════════ CHIFFRES ═════════ -->
+  <section class="stats" aria-label="Posture Kiné en chiffres">
+    <ul class="stats__list section__inner">
+      <li class="stat reveal"><span class="stat__num"><span data-count="14">14</span><sup>+</sup></span><span class="stat__label">ans d’expérience en kinésithérapie</span></li>
+      <li class="stat reveal"><span class="stat__num"><span data-count="9">9</span></span><span class="stat__label">prises en charge spécialisées</span></li>
+      <li class="stat reveal"><span class="stat__num"><span data-count="2">2</span></span><span class="stat__label">méthodes pour la scoliose : Schroth &amp; SEAS</span></li>
+      <li class="stat reveal"><span class="stat__num stat__num--text">Guéliz</span><span class="stat__label">au cœur de Marrakech, et à domicile sur demande</span></li>
+    </ul>
+  </section>
+
+  <!-- ═════════ 01 SOINS ET RÉÉDUCATION (BENTO) ═════════ -->
+  <section class="section soins" id="soins">
+    <div class="section__inner">
+      <div class="section-head reveal">
+        <p class="label"><span class="label__num">01</span>Soins et rééducation</p>
+        <h2>Cinq rééducations,<br /><em>une même écoute.</em></h2>
+      </div>
+
+      <ul class="bento">
+        <li class="tile tile--forest tile--big reveal">
+          <div class="tile__top"><span class="tile__num">01</span><span class="tile__go" aria-hidden="true">↗</span></div>
+          <div class="tile__media media" data-label="Traumatologique et orthopédique"><img src="images/reeducation-traumatologique-orthopedique.jpg" alt="" loading="lazy" /></div>
+          <h3>Rééducation traumatologique et orthopédique</h3>
+          <p>Retrouver mobilité et capacités fonctionnelles après une blessure, un traumatisme ou une chirurgie.</p>
+          <ul class="tile__tags"><li>Prothèse genou / hanche</li><li>Entorses</li><li>LCA · LCP</li><li>Fractures</li><li>Épaule</li></ul>
+          <a class="tile__link" href="soins/reeducation-traumatologique-orthopedique.html"><span class="sr-only">Découvrir : Rééducation traumatologique et orthopédique</span></a>
+        </li>
+        <li class="tile tile--rose reveal">
+          <div class="tile__top"><span class="tile__num">02</span><span class="tile__go" aria-hidden="true">↗</span></div>
+          <div class="tile__media media tile__media--round" data-label="Neurologique"><img src="images/reeducation-neurologique.jpg" alt="" loading="lazy" /></div>
+          <h3>Rééducation neurologique</h3>
+          <p>AVC, Parkinson, troubles de la marche et de l’équilibre.</p>
+          <a class="tile__link" href="soins/reeducation-neurologique.html"><span class="sr-only">Découvrir : Rééducation neurologique</span></a>
+        </li>
+        <li class="tile tile--sage reveal">
+          <div class="tile__top"><span class="tile__num">03</span><span class="tile__go" aria-hidden="true">↗</span></div>
+          <div class="tile__media media tile__media--round" data-label="Fonctionnelle"><img src="images/reeducation-fonctionnelle-posturale.jpg" alt="" loading="lazy" /></div>
+          <h3>Rééducation fonctionnelle et posturale</h3>
+          <p>Marche, équilibre et harmonie de la posture.</p>
+          <a class="tile__link" href="soins/reeducation-fonctionnelle-posturale.html"><span class="sr-only">Découvrir : Rééducation fonctionnelle et posturale</span></a>
+        </li>
+        <li class="tile tile--ivory reveal">
+          <div class="tile__top"><span class="tile__num">04</span><span class="tile__go" aria-hidden="true">↗</span></div>
+          <div class="tile__media media tile__media--round" data-label="Musculosquelettique"><img src="images/reeducation-musculosquelettique.jpg" alt="" loading="lazy" /></div>
+          <h3>Rééducation musculosquelettique</h3>
+          <p>Douleurs musculaires, articulaires et vertébrales.</p>
+          <a class="tile__link" href="soins/reeducation-musculosquelettique.html"><span class="sr-only">Découvrir : Rééducation musculosquelettique</span></a>
+        </li>
+        <li class="tile tile--deep reveal">
+          <div class="tile__top"><span class="tile__num">05</span><span class="tile__go" aria-hidden="true">↗</span></div>
+          <div class="tile__media media tile__media--round" data-label="Pédiatrique"><img src="images/reeducation-pediatrique.jpg" alt="" loading="lazy" /></div>
+          <h3>Rééducation pédiatrique</h3>
+          <p>Accompagner le développement moteur de l’enfant.</p>
+          <a class="tile__link" href="soins/reeducation-pediatrique.html"><span class="sr-only">Découvrir : Rééducation pédiatrique</span></a>
+        </li>
+        <li class="tile tile--ask reveal">
+          <p class="tile__ask-title">Vous hésitez&nbsp;?</p>
+          <p>Décrivez votre besoin, je vous oriente vers la prise en charge adaptée.</p>
+          <a class="cta cta--forest" href="#" data-whatsapp target="_blank" rel="noopener noreferrer">Poser une question</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═════════ 02 PRISE EN CHARGE (colonne vertébrale) ═════════ -->
+  <section class="section parcours" id="prise-en-charge">
+    <div class="section__inner">
+      <div class="section-head section-head--center reveal">
+        <p class="label label--rose"><span class="label__num">02</span>Votre prise en charge</p>
+        <h2>Pas à pas,<br /><em>vertèbre par vertèbre.</em></h2>
+      </div>
+
+      <ol class="steps" data-steps>
+        <li class="steps__spine" aria-hidden="true"><span class="steps__fill" data-steps-fill></span></li>
+        <li class="step reveal">
+          <span class="step__dot" aria-hidden="true"></span>
+          <div class="step__card">
+            <span class="step__num">Étape 01</span>
+            <h3>Une évaluation précise</h3>
+            <p>Un premier échange et un bilan pour comprendre votre histoire, vos douleurs, votre mobilité et vos objectifs.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__dot" aria-hidden="true"></span>
+          <div class="step__card">
+            <span class="step__num">Étape 02</span>
+            <h3>Un programme sur mesure</h3>
+            <p>Un plan de rééducation construit avec vous, adapté à votre quotidien et expliqué clairement.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step__dot" aria-hidden="true"></span>
+          <div class="step__card">
+            <span class="step__num">Étape 03</span>
+            <h3>Un suivi régulier</h3>
+            <p>Des séances progressives et un suivi attentif pour mesurer vos progrès, en confiance.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═════════ 03 NOS SPÉCIALITÉS (cartes empilées) ═════════ -->
+  <section class="section specialites" id="specialites">
+    <div class="section__inner">
+      <div class="section-head reveal">
+        <p class="label"><span class="label__num">03</span>Nos spécialités</p>
+        <h2>Ce qui nous tient <em>à cœur.</em></h2>
+      </div>
+
+      <div class="stack">
+        <article class="stack__card stack__card--forest">
+          <div class="stack__media media" data-label="Scoliose"><img src="images/scoliose-schroth-seas.jpg" alt="" loading="lazy" /></div>
+          <div class="stack__text">
+            <span class="stack__big" aria-hidden="true">01</span>
+            <h3>Rééducation de la <em>scoliose</em></h3>
+            <p>Une prise en charge pointue selon les méthodes Schroth et SEAS, pour les enfants, les adolescents et les adultes.</p>
+            <ul class="stack__list"><li>Méthode Schroth</li><li>Méthode SEAS</li><li>Enfants · ados · adultes</li></ul>
+            <div class="stack__cta">
+              <a class="cta cta--rose" href="soins/scoliose-schroth-seas.html">Découvrir <span class="cta__arrow" aria-hidden="true">↗</span></a>
+              <a class="cta cta--line-light" href="#prendre-rendez-vous" data-motif="Rééducation de la scoliose">Prendre rendez-vous</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stack__card stack__card--rose">
+          <div class="stack__media media" data-label="Dos"><img src="images/reeducation-du-dos.jpg" alt="" loading="lazy" /></div>
+          <div class="stack__text">
+            <span class="stack__big" aria-hidden="true">02</span>
+            <h3>Rééducation <em>du dos</em></h3>
+            <p>Lombalgie, cervicalgie, sciatique, hernie discale ou suites de chirurgie du rachis : thérapie manuelle, Pilates et physiothérapie.</p>
+            <ul class="stack__list"><li>Thérapie manuelle</li><li>Pilates</li><li>Physiothérapie</li></ul>
+            <div class="stack__cta">
+              <a class="cta cta--forest" href="soins/reeducation-du-dos.html">Découvrir <span class="cta__arrow" aria-hidden="true">↗</span></a>
+              <a class="cta cta--line-dark" href="#prendre-rendez-vous" data-motif="Rééducation du dos">Prendre rendez-vous</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stack__card stack__card--sage">
+          <div class="stack__media media" data-label="Rééducation périnéale"><img src="images/reeducation-perineale.jpg" alt="" loading="lazy" /></div>
+          <div class="stack__text">
+            <span class="stack__big" aria-hidden="true">03</span>
+            <h3>Rééducation <em>périnéale</em></h3>
+            <p>Après l’accouchement, en cas de fuites urinaires ou de prolapsus, et pour une reprise sportive adaptée.</p>
+            <ul class="stack__list"><li>Post-partum</li><li>Sangle abdominale</li><li>Reprise sportive</li></ul>
+            <div class="stack__cta">
+              <a class="cta cta--forest" href="soins/reeducation-perineale.html">Découvrir <span class="cta__arrow" aria-hidden="true">↗</span></a>
+              <a class="cta cta--line-dark" href="#prendre-rendez-vous" data-motif="Rééducation périnéale">Prendre rendez-vous</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stack__card stack__card--ivory">
+          <div class="stack__media media" data-label="À domicile"><img src="images/kinesitherapie-a-domicile.jpg" alt="" loading="lazy" /></div>
+          <div class="stack__text">
+            <span class="stack__big" aria-hidden="true">04</span>
+            <h3>Kinésithérapie <em>à domicile</em></h3>
+            <p>Pour les patients qui ne peuvent pas se déplacer facilement, les séances sont possibles à domicile, sur demande. Toutes les pathologies sont prises en charge.</p>
+            <ul class="stack__list"><li>Sur demande</li><li>Toutes pathologies</li></ul>
+            <div class="stack__cta">
+              <a class="cta cta--forest" href="soins/kinesitherapie-a-domicile.html">Découvrir <span class="cta__arrow" aria-hidden="true">↗</span></a>
+              <a class="cta cta--line-dark" href="#prendre-rendez-vous" data-motif="Kinésithérapie à domicile">Prendre rendez-vous</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ 04 MON PARCOURS ═════════ -->
+  <section class="section bio" id="mon-parcours">
+    <div class="section__inner bio__grid">
+      <div class="bio__visual reveal">
+        <div class="bio__photo media" data-label="Yasmine Brini"><img src="images/yasmine-brini.jpg" alt="Yasmine Brini dans son cabinet Posture Kiné" loading="lazy" /></div>
+        <div class="bio__stat">
+          <span class="bio__stat-num">14<sup>+</sup></span>
+          <span class="bio__stat-text">ans d’expérience en kinésithérapie et en management de la santé</span>
+        </div>
+      </div>
+
+      <div class="bio__text reveal">
+        <p class="label label--rose"><span class="label__num">04</span>Mon parcours</p>
+        <h2>Yasmine Brini,<br /><em>kinésithérapeute.</em></h2>
+        <p>Kinésithérapeute diplômée de l’École de Santé de Tunis depuis 2011, j’ai construit mon parcours autour de la rééducation, du mouvement et de la santé.</p>
+        <p>Mes stages en France, complétés par un Master en kinésithérapie obtenu à l’IHEPS à Marrakech en 2014, ont enrichi ma formation et ma vision de la prise en charge du patient.</p>
+        <p>Avec plus de 14 ans d’expérience en kinésithérapie et en management de la santé, j’accorde une place essentielle à l’écoute, à la précision du geste thérapeutique et à une prise en charge adaptée à chaque patient.</p>
+
+        <ol class="timeline">
+          <li><span class="timeline__year">2011</span><span class="timeline__what">Diplôme de kinésithérapeute — École de Santé de Tunis</span></li>
+          <li><span class="timeline__year">France</span><span class="timeline__what">Stages en kinésithérapie</span></li>
+          <li><span class="timeline__year">2014</span><span class="timeline__what">Master en kinésithérapie — IHEPS, Marrakech</span></li>
+          <li><span class="timeline__year">Aujourd’hui</span><span class="timeline__what">Posture Kiné, à Marrakech (Guéliz)</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ 05 LE CABINET ═════════ -->
+  <section class="section cabinet" id="le-cabinet">
+    <div class="cabinet__ghost" aria-hidden="true">écoute</div>
+    <div class="section__inner cabinet__grid">
+      <div class="cabinet__quote reveal">
+        <p class="label label--rose"><span class="label__num">05</span>Le cabinet</p>
+        <blockquote>
+          <p>« Derrière chaque douleur, une histoire singulière, une <em>personne</em> à comprendre et un chemin vers le mieux-être à construire. »</p>
+        </blockquote>
+        <p class="cabinet__sign"><span>Yasmine Brini</span>Kinésithérapeute, fondatrice de Posture Kiné</p>
+        <a class="link-arrow" href="#prendre-rendez-vous">Faisons connaissance <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="cabinet__values">
+        <li class="reveal"><span class="cabinet__icon" aria-hidden="true">01</span><div><h3>Écoute</h3><p>Chaque prise en charge commence par vos besoins.</p></div></li>
+        <li class="reveal"><span class="cabinet__icon" aria-hidden="true">02</span><div><h3>Précision</h3><p>Un geste thérapeutique précis, après une évaluation pointue.</p></div></li>
+        <li class="reveal"><span class="cabinet__icon" aria-hidden="true">03</span><div><h3>Sur mesure</h3><p>Un programme personnalisé, progressif et adapté.</p></div></li>
+        <li class="reveal"><span class="cabinet__icon" aria-hidden="true">04</span><div><h3>Confiance</h3><p>Un cadre professionnel, calme et bienveillant.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Visite du cabinet en 3D -->
+  <section class="section galerie" id="galerie">
+    <div class="section__inner">
+      <div class="galerie__head reveal">
+        <div>
+          <p class="label"><span class="label__num">3D</span>Visite du cabinet</p>
+          <h2>Le cabinet <em>en 3D.</em></h2>
+        </div>
+        <p class="galerie__intro">Découvrez le lieu qui vous accueille à Guéliz, avant même votre première séance.</p>
+      </div>
+
+      <ul class="galerie__grid">
+        <!-- Vidéo : déposez votre fichier dans videos/presentation.mp4 -->
+        <li class="galerie__item galerie__item--video reveal">
+          <div class="video" data-video-wrap>
+            <video data-video src="videos/presentation.mp4" muted loop playsinline autoplay preload="metadata"></video>
+
+            <!-- Film animé provisoire, affiché tant qu'il n'y a pas de vraie vidéo -->
+            <div class="film" aria-label="Film de présentation Posture Kiné" role="img">
+              <div class="film__rings"></div>
+              <div class="film__emblem">
+                <span class="film__arc film__arc--sage"></span>
+                <span class="film__arc film__arc--rose"></span>
+                <img src="images/logo-emblem.png" alt="" />
+              </div>
+              <div class="film__words" aria-hidden="true">
+                <span>Posture</span><span>Équilibre</span><span>Énergie</span><span>Posture Kiné</span>
+              </div>
+              <div class="film__bar"><span></span></div>
+            </div>
+
+            <div class="video__ui">
+              <span class="video__tag"><span class="video__rec"></span>Vidéo</span>
+              <button class="video__btn" type="button" data-video-toggle aria-label="Mettre en pause">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-pause"><path d="M8 5v14M16 5v14"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-play"><path d="M7 5l12 7-12 7z"/></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+        <!-- Photos 3D : déposez images/galerie-1.jpg … galerie-6.jpg -->
+        <li class="galerie__item reveal"><button type="button" class="galerie__btn" data-lightbox><span class="media"><img src="images/galerie-1.jpg" alt="Vue 3D du cabinet Posture Kiné — 1" loading="lazy" /></span><span class="galerie__cap">Vue 01</span></button></li>
+        <li class="galerie__item galerie__item--tall reveal"><button type="button" class="galerie__btn" data-lightbox><span class="media"><img src="images/galerie-2.jpg" alt="Vue 3D du cabinet Posture Kiné — 2" loading="lazy" /></span><span class="galerie__cap">Vue 02</span></button></li>
+        <li class="galerie__item reveal"><button type="button" class="galerie__btn" data-lightbox><span class="media"><img src="images/galerie-3.jpg" alt="Vue 3D du cabinet Posture Kiné — 3" loading="lazy" /></span><span class="galerie__cap">Vue 03</span></button></li>
+        <li class="galerie__item reveal"><button type="button" class="galerie__btn" data-lightbox><span class="media"><img src="images/galerie-4.jpg" alt="Vue 3D du cabinet Posture Kiné — 4" loading="lazy" /></span><span class="galerie__cap">Vue 04</span></button></li>
+        <li class="galerie__item reveal"><button type="button" class="galerie__btn" data-lightbox><span class="media"><img src="images/galerie-5.jpg" alt="Vue 3D du cabinet Posture Kiné — 5" loading="lazy" /></span><span class="galerie__cap">Vue 05</span></button></li>
+        <li class="galerie__item galerie__item--wide reveal"><button type="button" class="galerie__btn" data-lightbox><span class="media"><img src="images/galerie-6.jpg" alt="Vue 3D du cabinet Posture Kiné — 6" loading="lazy" /></span><span class="galerie__cap">Vue 06</span></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <dialog class="lightbox" data-lightbox-dialog aria-label="Galerie">
+    <button class="lightbox__close" type="button" data-lightbox-close aria-label="Fermer">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Image précédente">←</button>
+    <figure class="lightbox__figure">
+      <img data-lightbox-img alt="" />
+      <figcaption data-lightbox-cap></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Image suivante">→</button>
+  </dialog>
+
+  <!-- ═════════ 06 RENDEZ-VOUS ═════════ -->
+  <section class="section rdv" id="prendre-rendez-vous">
+    <div class="rdv__rings" aria-hidden="true"></div>
+    <div class="section__inner rdv__grid">
+      <div class="rdv__intro reveal">
+        <p class="label label--rose"><span class="label__num">06</span>Le premier pas</p>
+        <h2>On en parle <em>ensemble&nbsp;?</em></h2>
+        <p>Remplissez ce formulaire : votre demande arrive directement au cabinet, et je vous recontacte pour fixer un créneau.</p>
+        <div class="rdv__direct">
+          <a href="#" data-phone><span class="rdv__direct-label">Appeler</span><span data-phone-text></span></a>
+          <a href="#" data-whatsapp target="_blank" rel="noopener noreferrer"><span class="rdv__direct-label">WhatsApp</span><span>Écrire un message</span></a>
+        </div>
+      </div>
+      <!-- Netlify Forms : chaque demande est envoyée par e-mail (à configurer dans Netlify > Notifications) -->
+      <form class="rdv-form reveal" name="rendez-vous" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-rdv-form>
+        <input type="hidden" name="form-name" value="rendez-vous" />
+        <p hidden><label>Ne pas remplir <input name="bot-field" /></label></p>
+        <p class="rdv-form__title">Demande de rendez-vous</p>
+        <label>Nom complet
+          <input name="nom" type="text" autocomplete="name" required />
+        </label>
+        <label>Téléphone
+          <input name="tel" type="tel" autocomplete="tel" inputmode="tel" required />
+        </label>
+        <fieldset class="chips">
+          <legend>Motif</legend>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation traumatologique et orthopédique" required /><span>Traumato · ortho</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation neurologique" /><span>Neurologique</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation fonctionnelle et posturale" /><span>Fonctionnelle</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation musculosquelettique" /><span>Musculosquelettique</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation pédiatrique" /><span>Pédiatrique</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation de la scoliose" /><span>Scoliose</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation du dos" /><span>Dos</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Rééducation périnéale" /><span>Périnéale</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Kinésithérapie à domicile" /><span>À domicile</span></label>
+          <label class="chip"><input type="radio" name="motif" value="Autre demande" /><span>Autre</span></label>
+        </fieldset>
+        <label>Disponibilités <span class="optional">(facultatif)</span>
+          <input name="dispo" type="text" placeholder="Ex. : mardi après-midi" />
+        </label>
+        <button class="cta cta--forest cta--lg" type="submit" data-rdv-submit>Envoyer ma demande <span class="cta__arrow" aria-hidden="true">↗</span></button>
+        <button class="rdv-form__alt" type="button" data-rdv-whatsapp>ou envoyer plutôt sur WhatsApp</button>
+        <p class="rdv-form__status" data-rdv-status role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═════════ 07 CONTACT ET ACCÈS ═════════ -->
+  <section class="section local" id="contact">
+    <div class="section__inner local__grid">
+      <div class="local__info reveal">
+        <p class="label"><span class="label__num">07</span>Contact et accès</p>
+        <h2>Venez nous <em>rencontrer.</em></h2>
+        <dl class="local__list">
+          <div><dt>Adresse</dt><dd data-address>Adresse du cabinet</dd></div>
+          <div><dt>Horaires</dt><dd><ul class="local__hours" data-hours></ul></dd></div>
+          <div><dt>Téléphone</dt><dd><a href="#" data-phone data-phone-text></a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="#" data-email></a></dd></div>
+        </dl>
+        <a class="cta cta--forest" href="#" data-maps target="_blank" rel="noopener noreferrer">Itinéraire <span class="cta__arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="local__map reveal">
+        <iframe data-map-frame title="Carte — Posture Kiné, Guéliz, Marrakech" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div data-site-footer></div>
+
+<script src="layout.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

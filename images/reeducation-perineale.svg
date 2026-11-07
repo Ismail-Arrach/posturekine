@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f6ebe7"/>
+  <g fill="none" stroke="#c58f86">
+    <circle cx="600" cy="460" r="140" stroke-width="6" stroke-opacity=".9"/>
+    <circle cx="600" cy="460" r="210" stroke-width="5" stroke-opacity=".55"/>
+    <circle cx="600" cy="460" r="280" stroke-width="4" stroke-opacity=".3"/>
+    <circle cx="600" cy="460" r="350" stroke-width="3" stroke-opacity=".15"/>
+  </g>
+  <!-- lotus -->
+  <g stroke="none">
+    <path d="M600 300 C540 380 540 470 600 540 C660 470 660 380 600 300Z" fill="#355b50"/>
+    <path d="M600 540 C520 520 460 460 440 380 C520 390 580 450 600 540Z" fill="#91a99a"/>
+    <path d="M600 540 C680 520 740 460 760 380 C680 390 620 450 600 540Z" fill="#91a99a"/>
+    <path d="M600 540 C500 560 420 530 370 470 C450 450 540 480 600 540Z" fill="#c58f86"/>
+    <path d="M600 540 C700 560 780 530 830 470 C750 450 660 480 600 540Z" fill="#c58f86"/>
+  </g>
+  <path d="M420 600 C500 640 700 640 780 600" fill="none" stroke="#355b50" stroke-width="8" stroke-linecap="round"/>
+</svg>

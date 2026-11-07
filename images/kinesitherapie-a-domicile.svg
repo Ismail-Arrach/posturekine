@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f4efe7"/>
+  <circle cx="600" cy="450" r="320" fill="#e4ebe6"/>
+  <!-- maison -->
+  <path d="M390 450 L600 260 L810 450" fill="none" stroke="#355b50" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M440 420 V680 H760 V420" fill="#faf8f4" stroke="#355b50" stroke-width="14" stroke-linejoin="round"/>
+  <rect x="700" y="290" width="40" height="90" fill="#355b50"/>
+  <!-- cœur -->
+  <path d="M600 610 C520 555 500 510 520 475 C540 440 585 445 600 480 C615 445 660 440 680 475 C700 510 680 555 600 610 Z" fill="#c58f86"/>
+  <!-- colonne dans le cœur -->
+  <g fill="#faf8f4"><circle cx="600" cy="500" r="7"/><circle cx="600" cy="525" r="8"/><circle cx="600" cy="552" r="7"/></g>
+  <path d="M400 700 H800" stroke="#91a99a" stroke-width="8" stroke-linecap="round"/>
+</svg>
