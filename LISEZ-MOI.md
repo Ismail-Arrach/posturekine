@@ -85,22 +85,30 @@ Sur mobile, une barre en bas de l'écran propose Appeler / WhatsApp / Prendre re
 - [ ] Ajouter les vraies photos (et la vidéo si disponible)
 - [ ] Faire valider par Yasmine la citation qui lui est attribuée (section « Le cabinet »)
 
-## Publier sur internet
+## Hébergement : GitHub Pages (depuis le 7 novembre 2026)
 
-La méthode la plus simple est gratuite : allez sur https://app.netlify.com/drop, créez un compte, puis glissez tout le dossier `cabinet-yasmine-brini` dans la page. Netlify donne un lien en `.netlify.app`. Pour avoir un nom comme `posturekine.ma`, achetez le domaine puis ajoutez-le dans **Domain settings** sur Netlify.
+Le site est hébergé gratuitement sur **GitHub Pages**, sans badge « Powered by Netlify ». Il est publié depuis le dépôt `Ismail-Arrach/posturekine`, branche `main`. Le fichier `CNAME` contient le domaine `posturekine.com`, et `.nojekyll` sert les fichiers tels quels.
 
-## Recevoir les rendez-vous dans Gmail
+Le domaine `posturekine.com` a été acheté sur Netlify ; seuls ses enregistrements DNS y restent :
 
-Le formulaire « Demande de rendez-vous » utilise **Netlify Forms**. Il ne fonctionne qu'une fois le site en ligne sur Netlify : en local, il affiche un message et propose WhatsApp.
+| Type | Nom | Valeur |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | ismail-arrach.github.io |
 
-1. Publiez le site sur Netlify.
-2. Dans **Netlify → votre site → Forms**, activez la détection des formulaires (**Enable form detection**) si Netlify le demande, puis republiez le dossier dans **Deploys**. Le formulaire `rendez-vous` doit apparaître.
-3. Allez dans **Site configuration → Notifications → Emails and webhooks → Form submission notifications**.
-4. Cliquez sur **Add notification → Email notification**, choisissez le formulaire `rendez-vous` et saisissez l'adresse Gmail.
-5. Faites un test : remplissez le formulaire sur le site en ligne. Le mail arrive dans Gmail. Vérifiez aussi le dossier **Spam** la première fois et marquez-le « Non spam ».
+## Recevoir les rendez-vous par e-mail
 
-Toutes les demandes restent aussi consultables dans **Netlify → Forms**. L'offre gratuite limite le nombre de demandes par mois, ce qui est largement suffisant pour un cabinet.
+Le formulaire « Demande de rendez-vous » envoie les demandes via **FormSubmit** (gratuit, sans compte).
 
+1. Dans `script.js`, bloc `CABINET`, renseignez l'adresse de réception dans `formEmail`.
+2. Publiez le site, puis envoyez une première demande de test depuis le site en ligne.
+3. FormSubmit envoie un e-mail « Activate Form » à cette adresse. Cliquez sur le lien une seule fois (vérifiez aussi les **Spam**).
+4. Ensuite, chaque demande arrive directement dans la boîte mail, sous forme de tableau.
+
+Tant que `formEmail` est vide, le formulaire invite à utiliser le bouton WhatsApp.
 ## « Où avez-vous mal ? » et transitions (7 novembre 2026)
 
 - **Carte du corps interactive** (section après « Soins et rééducation ») : le visiteur touche une zone de la silhouette (dos, genou, épaule…) ou une situation (« Mon enfant », « Après un accouchement »…). Le site affiche la prise en charge conseillée, avec les liens vers les pages de soin. Le bouton « Prendre rendez-vous » pré-remplit le motif du formulaire.
@@ -109,4 +117,4 @@ Toutes les demandes restent aussi consultables dans **Netlify → Forms**. L'off
 
 ## Mettre à jour le site en ligne
 
-Le site est relié à GitHub et à Netlify (posturekine.com). Après chaque modification : ouvrez **GitHub Desktop**, écrivez un résumé, cliquez sur **Commit to main** puis sur **Push origin**. Netlify publie la nouvelle version en une minute environ.
+Après chaque modification : ouvrez **GitHub Desktop**, écrivez un résumé, cliquez sur **Commit to main** puis sur **Push origin**. GitHub Pages publie la nouvelle version en une à deux minutes.

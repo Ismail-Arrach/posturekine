@@ -3,6 +3,9 @@ const CABINET = {
   phone: '+212600000000',          // numéro au format international, sans espaces
   phoneDisplay: '06 00 00 00 00',  // numéro tel qu'il s'affiche
   email: 'contact@posturekine.ma',
+  // Adresse qui reçoit les demandes de rendez-vous du formulaire (via FormSubmit, gratuit).
+  // Au premier envoi, FormSubmit envoie un e-mail « Activate Form » à cette adresse : cliquez dessus une fois.
+  formEmail: 'yasminebrini1989@outlook.fr',
   city: 'Marrakech (Guéliz)',
   address: 'Centre d’affaires Farid, Magasin 5, Rue Khalid Ben El Walid, Guéliz, Marrakech 40000',
   // Carte : lieu exact sur Google Maps (recherche pour la carte, lien direct pour l'itinéraire)
@@ -157,7 +160,7 @@ if (lightbox) {
 }
 
 // Formulaire de rendez-vous
-// 1) "Envoyer ma demande" : envoi via Netlify Forms, qui transmet la demande par e-mail (Gmail)
+// 1) "Envoyer ma demande" : envoi par e-mail via FormSubmit (adresse : CABINET.formEmail)
 // 2) "ou envoyer plutôt sur WhatsApp" : ouvre WhatsApp avec la demande pré-remplie
 const rdvForm = document.querySelector('[data-rdv-form]')
 if (rdvForm) {
@@ -172,21 +175,32 @@ if (rdvForm) {
   rdvForm.addEventListener('submit', async event => {
     event.preventDefault()
 
-    // Netlify Forms ne fonctionne qu'une fois le site en ligne
-    if (location.protocol === 'file:') {
-      setStatus('Le formulaire fonctionnera une fois le site en ligne sur Netlify. En attendant, utilisez WhatsApp.', 'error')
+    // Sans adresse configurée, ou en local, on propose WhatsApp
+    if (!CABINET.formEmail || location.protocol === 'file:') {
+      setStatus('L’envoi par e-mail n’est pas encore disponible. Utilisez le bouton WhatsApp juste en dessous.', 'error')
       return
     }
+
+    const data = new FormData(rdvForm)
+    if (data.get('_honey')) return
 
     rdvSubmit.disabled = true
     setStatus('Envoi en cours…')
     try {
-      const response = await fetch('/', {
+      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CABINET.formEmail)}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(rdvForm)).toString(),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Demande de rendez-vous — ${data.get('nom')}`,
+          _template: 'table',
+          Nom: data.get('nom'),
+          Téléphone: data.get('tel'),
+          Motif: data.get('motif'),
+          Disponibilités: data.get('dispo') || '—',
+        }),
       })
-      if (!response.ok) throw new Error(response.statusText)
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok || String(result.success) === 'false') throw new Error(result.message || response.statusText)
       rdvForm.reset()
       setStatus('Merci ! Votre demande a bien été envoyée. Le cabinet vous recontacte très vite.', 'success')
     } catch {

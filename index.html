@@ -471,10 +471,9 @@
           <a href="#" data-whatsapp target="_blank" rel="noopener noreferrer"><span class="rdv__direct-label">WhatsApp</span><span>Écrire un message</span></a>
         </div>
       </div>
-      <!-- Netlify Forms : chaque demande est envoyée par e-mail (à configurer dans Netlify > Notifications) -->
-      <form class="rdv-form reveal" name="rendez-vous" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-rdv-form>
-        <input type="hidden" name="form-name" value="rendez-vous" />
-        <p hidden><label>Ne pas remplir <input name="bot-field" /></label></p>
+      <!-- Formulaire envoyé par e-mail via FormSubmit (adresse à régler dans script.js > CABINET.formEmail) -->
+      <form class="rdv-form reveal" name="rendez-vous" method="POST" data-rdv-form>
+        <p hidden><label>Ne pas remplir <input name="_honey" tabindex="-1" autocomplete="off" /></label></p>
         <p class="rdv-form__title">Demande de rendez-vous</p>
         <label>Nom complet
           <input name="nom" type="text" autocomplete="name" required />
