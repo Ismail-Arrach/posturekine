@@ -79,6 +79,8 @@ Sur mobile, une barre en bas de l'écran propose Appeler / WhatsApp / Prendre re
 7. Les demandes de rendez-vous passent par Netlify Forms et arrivent par e-mail. WhatsApp reste proposé en option.
 8. Restructuration selon les textes de Yasmine : nouveau menu à sous-menus, 9 pages de soin (Marrakech, Guéliz), section « Mon parcours », nouvelle citation, galerie 3D du cabinet. L'amincissement et les soins esthétiques sont retirés. Le sous-titre devient « Votre allié en kinésithérapie ».
 
+9. Photos réelles ajoutées pour 8 soins (recadrées en carré pour les cercles), plus une 2ᵉ photo dans la page pédiatrique (`images/reeducation-pediatrique-2.jpg`). La kinésithérapie à domicile garde son illustration provisoire.
+
 ## Avant de publier
 
 - [ ] Remplacer les infos provisoires dans `script.js`

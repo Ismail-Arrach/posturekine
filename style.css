@@ -1023,6 +1023,9 @@ p { text-wrap: pretty; }
 .prose__intro { font-family: var(--display); font-weight: 300; font-size: clamp(1.35rem, 2.6vw, 1.75rem) !important; line-height: 1.35; color: var(--forest-deep) !important; letter-spacing: -0.01em; margin-bottom: 1.6rem !important; }
 .prose h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); margin: 3rem 0 1.3rem; }
 .prose h2:first-child { margin-top: 0; }
+.prose__figure { margin: 2.2rem 0; }
+.prose__figure .media { aspect-ratio: 16 / 10; border-radius: 28px; box-shadow: 0 30px 60px rgba(41, 74, 64, 0.14); }
+.prose__figure figcaption { margin-top: 0.9rem; font-family: var(--display); font-style: italic; color: var(--muted); text-align: center; }
 
 .pills { list-style: none; display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 0 0 1.6rem; padding: 0; }
 .pills li {
