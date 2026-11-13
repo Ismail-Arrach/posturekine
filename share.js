@@ -6,7 +6,10 @@
      data-ink           couleur de l'icône du bouton (ex. #ffffff)
      data-side          left | right                 (défaut : left)
      data-mobile-bottom décalage sur mobile, pour ne pas cacher une barre fixe (ex. 5.6rem)
-   La langue suit <html lang="…"> : ar, fr ou en. */
+   La langue suit <html lang="…"> : ar, fr ou en.
+   Partager un élément précis (un livre, un article…) :
+     SiteShare.open({ title: 'Titre', url: 'https://…#ancre', label: 'Texte affiché dans le panneau' })
+   Un bouton portant l'attribut data-share-trigger ne referme pas le panneau quand on clique dessus. */
 (function () {
   var me = document.currentScript || {}
   var ds = me.dataset || {}
@@ -43,6 +46,7 @@
     '.shr__panel{position:absolute;bottom:calc(100% + .7rem);' + side + ':0;width:min(17.5rem,calc(100vw - 2rem));padding:1rem;border-radius:20px;background:#fff;color:#1d1d1f;box-shadow:0 24px 60px rgba(0,0,0,.28);opacity:0;visibility:hidden;transform:translateY(10px) scale(.97);transform-origin:bottom ' + side + ';transition:opacity .25s,transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s}' +
     '.shr.is-open .shr__panel{opacity:1;visibility:visible;transform:none;transition-delay:0s}' +
     '.shr__title{margin:0 0 .8rem;font-size:.95rem;font-weight:600;text-align:center}' +
+    '.shr__sub{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:-.5rem 0 .9rem;font-size:.78rem;line-height:1.4;color:#6b7280;text-align:center}.shr__sub:empty{display:none}' +
     '.shr__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem .3rem}' +
     '.shr__item{display:flex;flex-direction:column;align-items:center;gap:.35rem;padding:0;border:0;background:none;color:inherit;font:inherit;font-size:.7rem;line-height:1.2;text-align:center;text-decoration:none;cursor:pointer}' +
     '.shr__ico{width:2.7rem;height:2.7rem;border-radius:50%;display:grid;place-items:center;color:#fff;transition:transform .2s}' +
@@ -59,17 +63,19 @@
     var L = t()
     var box = document.createElement('div'); box.className = 'shr'
     box.innerHTML =
-      '<div class="shr__panel" role="dialog" aria-label="' + L.title + '"><p class="shr__title"></p><div class="shr__grid"></div><p class="shr__toast" aria-live="polite"></p></div>' +
+      '<div class="shr__panel" role="dialog" aria-label="' + L.title + '"><p class="shr__title"></p><p class="shr__sub" dir="auto"></p><div class="shr__grid"></div><p class="shr__toast" aria-live="polite"></p></div>' +
       '<button class="shr__btn" type="button" aria-expanded="false" aria-label="' + L.open + '">' + svg('share') + '</button>'
     document.body.appendChild(box)
     var btn = box.querySelector('.shr__btn'), grid = box.querySelector('.shr__grid'), toast = box.querySelector('.shr__toast')
 
+    var custom = null
     function fill() {
       L = t()
       box.querySelector('.shr__title').textContent = L.title
+      box.querySelector('.shr__sub').textContent = custom ? (custom.label || custom.title || '') : ''
       btn.setAttribute('aria-label', L.open)
-      var url = location.href.split('#')[0] + (location.hash && location.hash.length > 1 ? location.hash : '')
-      var title = meta('og:title') || document.title
+      var url = custom && custom.url ? custom.url : location.href.split('#')[0] + (location.hash && location.hash.length > 1 ? location.hash : '')
+      var title = custom && custom.title ? custom.title : meta('og:title') || document.title
       var u = encodeURIComponent(url), tt = encodeURIComponent(title)
       var items = [
         ['whatsapp', 'WhatsApp', '#25d366', 'https://wa.me/?text=' + tt + '%20' + u],
@@ -101,8 +107,14 @@
       btn.setAttribute('aria-expanded', String(v))
       if (v && byKeyboard) { var first = grid.querySelector('.shr__item'); if (first) first.focus() }
     }
-    btn.addEventListener('click', function (e) { open(!box.classList.contains('is-open'), e.detail === 0) })
-    document.addEventListener('click', function (e) { if (box.classList.contains('is-open') && !box.contains(e.target)) open(false) })
+    btn.addEventListener('click', function (e) { custom = null; open(!box.classList.contains('is-open'), e.detail === 0) })
+    document.addEventListener('click', function (e) {
+      if (box.classList.contains('is-open') && !box.contains(e.target) && !(e.target.closest && e.target.closest('[data-share-trigger]'))) open(false)
+    })
+    window.SiteShare = {
+      open: function (opts, byKeyboard) { custom = opts || null; open(true, byKeyboard) },
+      close: function () { open(false) }
+    }
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('is-open')) { open(false); btn.focus() } })
   }
 
