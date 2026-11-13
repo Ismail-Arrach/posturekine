@@ -81,6 +81,8 @@ Sur mobile, une barre en bas de l'écran propose Appeler / WhatsApp / Prendre re
 
 9. Photos réelles ajoutées pour 8 soins (recadrées en carré pour les cercles), plus une 2ᵉ photo dans la page pédiatrique (`images/reeducation-pediatrique-2.jpg`). La kinésithérapie à domicile garde son illustration provisoire.
 
+10. Bouton de partage (`share.js`) sur toutes les pages : WhatsApp, Facebook, X, LinkedIn, Telegram, e-mail, copier le lien, et partage du téléphone sur mobile. Chaque page a ses balises `og:` (titre, description, photo) pour un bel aperçu sur les réseaux.
+
 ## Avant de publier
 
 - [ ] Remplacer les infos provisoires dans `script.js`
